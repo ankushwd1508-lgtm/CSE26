@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Product Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: whitesmoke;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            color: black;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .product-card h2 {
+            font-size: 24px;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: gray;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-card .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+
+        /* 1st breakpoint: above 1024px */
+        @media (min-width: 600px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* 2nd breakpoint: below 600px */
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .product-card h2 {
+                font-size: 20px;
+            }
+        }
+
+        /* 3rd breakpoint: below 480px */
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            body {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Responsive Product Grid</h1>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://imgs.search.brave.com/1t2P3UDzQ1qjqCq1GpoLbJnWCC400LuYwb6ZF8Y4aGg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNzAv/MzcwLzg5Ni9zbWFs/bC9zbWFydHdhdGNo/LXdpdGgtZGFyay1n/cmF5LWJhbmQtc2l0/cy1vbi1ncmF5LXN1/cmZhY2UtcGhvdG8u/anBn" alt="Product 1">
+            <h2>Product 1</h2>
+            <p>High-quality item with great features.</p>
+            <div class="price">₹499</div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://imgs.search.brave.com/YKIPVqTtnS-FZTDJbXQw66Vy2f_FQpRrf-TE1XY5yz0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE2LzQ2LzA3Lzky/LzM2MF9GXzE2NDYw/NzkyMTRfQmRjZ0dG/TGVqMUxQYURUQldL/UnBtUFRJU3N4dUkx/cHcuanBn" alt="Product 2">
+            <h2>Product 2</h2>
+            <p>Durable and stylish for daily use.</p>
+            <div class="price">₹799</div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://imgs.search.brave.com/zqGZ-qPY1zt8curromgYTJKmmRNbVszpDkL2TO5Yyps/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbi5q/YmwuY29tL2R3L2lt/YWdlL3YyL0JGTkRf/UFJEL29uL2RlbWFu/ZHdhcmUuc3RhdGlj/Ly0vU2l0ZXMtbWFz/dGVyQ2F0YWxvZ19I/YXJtYW4vZGVmYXVs/dC9kdzIwNGRhOWM2/L3BkcC9KQkxfUXVh/bnR1bV9UV1NfTGlm/ZXN0eWxlX0ltYWdl/XzAzXzkwNHg1NjBw/eC5wbmc_c3c9OTA0/JnNoPTU2MA" alt="Product 3">
+            <h2>Product 3</h2>
+            <p>Lightweight and comfortable.</p>
+            <div class="price">₹1,299</div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://imgs.search.brave.com/rGV6hSVECKQstaUJJ59q1lzkqKTpL3-hJOOz2uKyLnE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJhbWVzZGly/ZWN0LmNvbS9pbWFn/ZS91cGxvYWQvdjE3/NTEyNzcxMTgvaG9t/ZVBhZ2UvRkRfSFBf/UkVERVNJR05fVkVS/U0FDRV9ELnBuZw" alt="Product 4">
+            <h2>Product 4</h2>
+            <p>Trendy design with premium quality.</p>
+            <div class="price">₹999</div>
+        </div>
+    </div>
+   <h2>SHASHANK SINGH</h2>
+<h2>2025B01010509</h2>
+<h2>CSE-26</h2> 
+</body>
+</html>
