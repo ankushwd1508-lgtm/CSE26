@@ -6,11 +6,12 @@
  <style>
     .container{
         display:flex;
-        background-color: antiquewhite;
+        background-color: white;
         width: 1517px;height: 550px;
         border:2px solid black ;
         padding: 40px;
         justify-content: center;
+        gap:10px ;
     }
     .profile{
         width: 70px;
@@ -28,11 +29,16 @@
     .card {
             background: #ffffff;
             width: 230px;
-            height: 260px;
+            height: 300px;
             padding: 20px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);    
+        
+        }
+        .row-group {
+        display: flex;     
+          gap: 15px;
         }
         .name{
             font size:18px;
@@ -49,14 +55,15 @@
  <body>
   <div class="container">
 
-    <div class="card">
-        <div class="profile">JK</div>
+    <div class="card" >
+    <div class="profile" >JK</div>
         <div class="name">Jeet Kumar</div>
         <div class="details">
             B.Tech - CSE <br>
             Roll No: 21CS1007 <br>
             1st Year
         </div>
+        
     </div>
 
     <div class="card">

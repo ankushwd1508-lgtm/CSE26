@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Product Grid</title>
+    <style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color:rgba(23, 22, 51, 0.467);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            color: rgb(255, 162, 1);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-left:20px ;
+
+            
+        }
+
+        .product-card {
+            background-color: rgb(82, 77, 96);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height:500px;
+            width:350px ;
+        }
+        .img-hover {
+          width: 200px;
+          transition: transform 0.4s ease;
+        }
+
+        .img-hover:hover {
+           transform: scale(1.1);
+        }
+
+        .product-card img {
+            width: 255px;
+            height: 270px;
+            margin-bottom: 20px;
+        }
+
+        .product-card h2 {
+            font-size: 24px;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: gray;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+
+        /* 1st breakpoint: above 1024px */
+        @media (min-width: 600px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* 2nd breakpoint: below 600px */
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .header h1 {
+                font-size: 34px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .product-card h2 {
+                font-size: 20px;
+            }
+        }
+
+        /* 3rd breakpoint: below 480px */
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            body {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 34px;
+            }
+        }
+        .navbar {
+                background-color: black;
+                padding: 15px 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom:20px ;
+            }
+            
+            .logo {
+                font-size: 25px;
+                font-weight: bold;
+                color: white;
+            }
+            
+            .nav-mid {
+                display: flex;
+                gap: 20px;
+            }
+            
+            .nav-mid a {
+                font-size: 25px;
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+            }
+            
+            .nav-right {
+                display: flex;
+                gap: 20px;
+            }
+            
+            .nav-right a {
+                font-size: 25px;
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+            }
+            
+            .main {
+                padding: 40px 30px;
+            }
+            
+            .main h1 {
+                font-size: 25px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            
+            .main p {
+                font-size: 16px;
+                color: black;
+            }
+            a:hover {
+             color: red;
+             text-decoration: underline;
+            } 
+    </style>
+    <body>
+     <div class="header">
+        <hr>
+        <h1>LIGHTNING NEWS</h1>
+        <hr>
+    </div>
+    <nav class="navbar">
+    <div class="nav-mid">
+                <a href="">Home</a>
+                <a href="">Weather</a>
+                <a href="">Sports</a>
+                <a href="">Viral News</a>
+                <a href="">Stock Market</a>
+            </div> 
+             <div class="nav-right">
+                <a href="" class="cart-icon">Educational</a>
+                <a href="">Login</a>
+            </div>
+        </nav>
+        <div class="product-grid">
+        
+        <div class="product-card" >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNbr7q8fLyp1Nnd6us5H6tjoQ1GD84u8GQlQ&s" class="img-hover" alt="image">
+            <h2>India Won Champioms Trophy of 2025 By Defeating Newzealand</h2>
+        </div>
+
+        <div class="product-card">
+            <img src="https://www.aqi.in/blog/wp-content/uploads/2025/08/no-clean-air-day-in-delhi-2025.webp" class="img-hover" alt="delhi image">
+            <h2>In the Winter of 2025 Still Delhi AQI is Too High Around 400</h2>
+            
+        </div>
+
+        <div class="product-card">
+            <img src="https://imgs.search.brave.com/SnXv64fjZhhKFR-6KOhgUmzs1UUNdBBBBaz_gqtVleA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMz/MTM5NTI1NC92ZWN0/b3IvbmVwLW5ldHdv/cmstZXF1aXBtZW50/LXByb3ZpZGVyLWFj/cm9ueW0uanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPXdsaTY2/WDF2dDUxbFRTOFlG/Q0ZSdVA3VV9uS3BB/MkszVFpoYjNVZzBv/ZFk9" class="img-hover" alt="NEP image">
+            <h2>The New Education Policy (NEP) 2020, which replaced the 1986 National Policy on Education</h2>
+        </div>
+
+        <div class="product-card">
+            <img src="https://www.mobigyaan.com/wp-content/uploads/2025/12/OnePlus-15R-Ace-Edition.jpg" class="img-hover" alt="one plus 15r">
+            <h2 style="font-size:17px ;">The OnePlus 15R specs feature the powerful Snapdragon 8 Gen 5, a big 7400mAh battery with 80W charging, a 6.83-inch 165Hz AMOLED display, and a 50MP main camera, running OxygenOS 16 on Android 16 with up to 12GB RAM & 512GB storage</h2>
+        </div>
+
+    </div>
+    </body>
+    </head>
+    </html>
